@@ -5,8 +5,8 @@ import HashtagList from "./components/HashtagList";
 const App = () => {
   return (
     <>
-      <Container />
       <Footer />
+      <Container />
       <HashtagList />
     </>
   );
