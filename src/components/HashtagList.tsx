@@ -1,5 +1,5 @@
 const HashtagList = () => {
-  return <div>HashtagList</div>;
+  return <ul>HashtagList</ul>;
 };
 
 export default HashtagList;

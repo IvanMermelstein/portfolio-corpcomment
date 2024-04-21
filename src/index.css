@@ -535,26 +535,19 @@ form button span::selection {
 .footer {
   position: absolute;
   transform: rotate(-90deg);
-  left: -225px;
-  bottom: 174px;
+  left: -65px;
+  bottom: 200px;
 }
 
 /* COPYRIGHT */
 .footer > small {
   color: #a6adb5;
   font-size: 11px;
-}
-
-.footer > small *::selection {
-  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
 }
 
 .footer > small > p {
   opacity: 0.4;
-}
-
-.footer > small > p > a {
-  text-decoration: underline;
 }
 
 /* SPINNER */
