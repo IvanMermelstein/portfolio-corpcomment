@@ -1,5 +1,9 @@
 const PageHeading = () => {
-  return <div>PageHeading</div>;
+  return (
+    <h1>
+      Give feedback. <span>Publicly.</span>
+    </h1>
+  );
 };
 
 export default PageHeading;

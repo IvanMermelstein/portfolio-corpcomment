@@ -1,5 +1,14 @@
 const HashtagList = () => {
-  return <ul>HashtagList</ul>;
+  return (
+    <ul className="hashtags">
+      <li>
+        <button>#ivan</button>
+      </li>
+      <li>
+        <button>#nike</button>
+      </li>
+    </ul>
+  );
 };
 
 export default HashtagList;

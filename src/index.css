@@ -536,7 +536,7 @@ form button span::selection {
   position: absolute;
   transform: rotate(-90deg);
   left: -65px;
-  bottom: 200px;
+  bottom: 500px;
 }
 
 /* COPYRIGHT */
