@@ -1,4 +1,4 @@
-import FeedbackList from "./Header/FeedbackList";
+import FeedbackList from "./FeedbackList";
 import Header from "./Header/Header";
 
 const Container = () => {

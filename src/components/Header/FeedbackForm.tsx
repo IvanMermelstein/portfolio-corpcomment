@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FEEDBACK_MAX_LENGTH } from "../lib/constants";
+import { FEEDBACK_MAX_LENGTH } from "../../lib/constants";
 
 const FeedbackForm = () => {
   const [text, setText] = useState("");
