@@ -492,6 +492,10 @@ form button span::selection {
   margin-top: -1px;
 }
 
+.feedback > p {
+  margin: auto;
+}
+
 /* HASHTAGS */
 .hashtags {
   position: absolute;
