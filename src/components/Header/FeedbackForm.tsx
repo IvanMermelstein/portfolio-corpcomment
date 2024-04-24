@@ -17,6 +17,10 @@ const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!text.includes("#")) {
+      alert("Please include a #hashtag for company name");
+      return;
+    }
     onAddToList(text);
     setText("");
   };
@@ -35,7 +39,7 @@ const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
       </label>
       <div>
         <p className="u-italic">{charCount}</p>
-        <button>
+        <button disabled={text.length <= 0}>
           <span>Submit</span>
         </button>
       </div>
