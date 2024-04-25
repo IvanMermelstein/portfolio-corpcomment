@@ -12,7 +12,11 @@ const HashtagList = ({
   return (
     <ul className="hashtags">
       {companyList.map((company) => (
-        <HashtagItem company={company} onSelectCompany={handleSelectCompany} />
+        <HashtagItem
+          key={company}
+          company={company}
+          onSelectCompany={handleSelectCompany}
+        />
       ))}
     </ul>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FEEDBACK_MAX_LENGTH } from "../../lib/constants";
+import { FEEDBACK_MAX_LENGTH, FEEDBACK_MIN_LENGTH } from "../../lib/constants";
 
 type FeedbackFormProps = {
   onAddToList: (item: string) => void;
@@ -7,6 +7,8 @@ type FeedbackFormProps = {
 
 const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
   const [text, setText] = useState("");
+  const [showValidIndicator, setShowValidIndicator] = useState(false);
+  const [showInvalidIndicator, setShowInvalidIndicator] = useState(false);
   const charCount = FEEDBACK_MAX_LENGTH - text.length;
 
   const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -17,16 +19,26 @@ const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!text.includes("#")) {
-      alert("Please include a #hashtag for company name");
+    if (text.includes("#") && text.length > FEEDBACK_MIN_LENGTH) {
+      setShowValidIndicator(true);
+      setTimeout(() => setShowValidIndicator(false), 2000);
+    } else {
+      setShowInvalidIndicator(true);
+      setTimeout(() => setShowInvalidIndicator(false), 2000);
       return;
     }
+
     onAddToList(text);
     setText("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form
+      onSubmit={handleSubmit}
+      className={`form ${showValidIndicator ? "form--valid" : ""} ${
+        showInvalidIndicator ? "form--invalid" : ""
+      }`}
+    >
       <textarea
         id="feedback-textarea"
         value={text}
