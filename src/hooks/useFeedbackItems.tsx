@@ -7,9 +7,9 @@ const useFeedbackItems = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    setIsLoading(true);
-    setErrorMessage("");
     const fetchData = async () => {
+      setIsLoading(true);
+      setErrorMessage("");
       try {
         const response = await fetch(
           "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks"
